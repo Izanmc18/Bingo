@@ -1,0 +1,48 @@
+@if (bingoService.modalLineaVisible()) {
+  <div class="overlay-modal" (click)="cerrar()">
+    <div class="contenido-modal" (click)="$event.stopPropagation()">
+      
+      <div class="header-modal">
+        <h2>🕵️ Comprobar Línea</h2>
+        <button class="btn-cerrar-x" (click)="cerrar()">✕</button>
+      </div>
+
+      @if (estado() !== 'exito') {
+        <p class="instruccion">Introduce los 5 números de la línea:</p>
+        
+        <div class="grid-inputs">
+          @for (num of numerosInput; track $index) {
+            <input 
+              type="text" 
+              inputmode="numeric"
+              maxlength="2"
+              [(ngModel)]="numerosInput[$index]"
+              (input)="validarEntrada($index, $event)" 
+              placeholder="00"
+              class="input-numero">
+          }
+        </div>
+
+        <div class="acciones">
+          <button class="btn-verificar" (click)="comprobar()">VERIFICAR</button>
+        </div>
+      }
+
+      @if (estado() === 'exito') {
+        <div class="mensaje-exito">
+          <div class="texto-gigante">¡LÍNEA!</div>
+          <p>¡¡¡Los números son correctos!!! 🎉</p>
+          <button class="btn-volver" (click)="cerrar()">Seguir Jugando</button>
+        </div>
+      }
+
+      @if (estado() === 'error') {
+        <div class="mensaje-error">
+          ❌ INCORRECTO: Alguno de estos números no ha salido todavía.
+          <button class="btn-reintentar" (click)="estado.set('pendiente')">Intentar de nuevo</button>
+        </div>
+      }
+
+    </div>
+  </div>
+}

@@ -1,0 +1,113 @@
+.barra-acciones {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  align-items: stretch; /* Para que todos tengan la misma altura visual */
+}
+
+/* Botones base */
+button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px; 
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:active { transform: scale(0.95); }
+button:disabled { opacity: 0.5; cursor: not-allowed; filter: grayscale(1); }
+
+/* --- COLORES --- */
+
+.btn-sacar {
+  background: linear-gradient(45deg, #ff00cc, #333399);
+  flex: 1 1 40%;
+}
+
+/* GRUPO AUTO (Botón + Input) */
+.grupo-auto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 15px 5px 5px;
+  border-radius: 50px;
+  flex: 1 1 40%;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-auto {
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  flex: 1; 
+  box-shadow: none; 
+  margin: 0;
+}
+.btn-auto.activo {
+  background: #ff9800; 
+  animation: palpito 2s infinite;
+}
+
+/* INPUT DE TIEMPO */
+.config-tiempo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.config-tiempo label {
+  font-size: 0.7rem;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.input-segundos {
+  width: 40px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #00dbde;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  outline: none;
+}
+.input-segundos:focus {
+  border-color: #fc00ff;
+}
+
+/* Otros Botones */
+.btn-linea {
+  background: linear-gradient(45deg, #ff9966, #ff5e62);
+  box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
+  flex: 2 1 50%; 
+}
+
+.btn-reiniciar {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
+  flex: 1 1 auto; 
+  min-width: 140px;
+}
+
+.btn-reiniciar:hover {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+@keyframes palpito {
+  0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+}

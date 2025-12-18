@@ -1,0 +1,10 @@
+<div class="contenedor-visor">
+  <h2>Último Número</h2>
+  <div class="bola-gigante" [class.animacion]="bingoService.ultimoNumero()">
+    @if (bingoService.ultimoNumero()) {
+      {{ bingoService.ultimoNumero() }}
+    } @else {
+      --
+    }
+  </div>
+</div>

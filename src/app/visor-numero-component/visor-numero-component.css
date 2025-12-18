@@ -1,0 +1,48 @@
+.contenedor-visor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 20px;
+  background-color: rgba(255, 255, 255, 0.05); 
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  width: 100%; 
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #00e5ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0 0 1vh 0; 
+  font-size: clamp(1rem, 3vh, 1.8rem); 
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.bola-gigante {
+  width: clamp(120px, 25vh, 250px);
+  height: clamp(120px, 25vh, 250px);
+  
+  background: radial-gradient(circle at 30% 30%, #ffd600, #ff6d00);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(4rem, 12vh, 8rem);
+  font-family: 'Arial Black', sans-serif;
+  color: #1a1a2e;
+  box-shadow: 
+    inset -5px -5px 15px rgba(0,0,0,0.4), 
+    0 0 30px rgba(255, 109, 0, 0.6);
+}
+
+.animacion {
+  animation: rebote 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes rebote {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}

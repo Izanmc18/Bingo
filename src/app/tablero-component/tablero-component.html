@@ -1,0 +1,9 @@
+<div class="grid-tablero">
+  @for (num of todosLosNumeros; track num) {
+    <div class="casilla" 
+         [class.ultimo]="esElUltimo(num)"
+         [class.marcado]="yaSalio(num)">
+      {{ num }}
+    </div>
+  }
+</div>

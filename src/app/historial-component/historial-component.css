@@ -1,0 +1,47 @@
+.contenedor-historial {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+}
+
+h3 {
+  color: #ff4081;
+  margin-top: 0;
+  font-size: 1.4rem;
+  text-shadow: 0 0 5px rgba(255, 64, 129, 0.5);
+}
+
+.lista-bolas {
+  display: flex;
+  gap: 15px; /* Más separación entre bolas */
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.bola-pequena {
+  /* CAMBIO: Bolas más grandes (antes 45px) */
+  width: 65px;
+  height: 65px;
+  
+  background: linear-gradient(135deg, #7c4dff, #651fff);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+small {
+  color: #b0bec5;
+  font-size: 1rem;
+}

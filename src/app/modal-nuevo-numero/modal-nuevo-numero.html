@@ -1,0 +1,13 @@
+@if (visible()) {
+  <div class="overlay-modal" (click)="cerrar()">
+    <div class="contenido-modal" (click)="$event.stopPropagation()">
+      
+      <div class="titulo-modal">¡NÚMERO!</div>
+      
+      <div class="bola-dorada-maxima">
+        {{ bingoService.ultimoNumero() }}
+      </div>
+
+    </div>
+  </div>
+}

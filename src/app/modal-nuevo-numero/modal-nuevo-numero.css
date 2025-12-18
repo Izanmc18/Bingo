@@ -1,0 +1,63 @@
+/* El fondo oscuro que tapa toda la pantalla */
+.overlay-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85); 
+  backdrop-filter: blur(8px); 
+  z-index: 9999; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 0.3s ease-out;
+}
+
+.contenido-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.titulo-modal {
+  color: #ffd700;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  font-family: 'Segoe UI Black', sans-serif;
+}
+
+/* Bola Dorada XL */
+.bola-dorada-maxima {
+  width: 350px; 
+  height: 350px;
+  background: radial-gradient(circle at 30% 30%, #ffd700, #ff8f00);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14rem; 
+  font-family: 'Arial Black', sans-serif;
+  color: #1a1a2e; 
+  border: 4px solid white;
+  box-shadow: 
+    inset -20px -20px 60px rgba(0,0,0,0.3), 
+    0 0 50px rgba(255, 215, 0, 0.8), 
+    0 0 100px rgba(255, 215, 0, 0.4); 
+}
+
+/* Animaciones */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from { transform: scale(0) rotate(-180deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
+}

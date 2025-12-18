@@ -1,0 +1,104 @@
+.overlay-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 0.2s ease-out;
+}
+
+.contenido-modal {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.header-modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #00e5ff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.btn-cerrar-x {
+  background: none; border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.5rem; cursor: pointer;
+}
+
+.instruccion { color: #b0bec5; margin-bottom: 20px; }
+
+/* Inputs */
+.grid-inputs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.input-numero {
+  width: 50px; height: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+.input-numero:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Botones */
+.btn-verificar {
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  border: none; padding: 15px 40px;
+  color: white; font-weight: bold; font-size: 1.2rem;
+  border-radius: 50px; cursor: pointer;
+  width: 100%;
+}
+
+/* Éxito */
+.mensaje-exito { animation: pop-in 0.5s; }
+.texto-gigante {
+  font-size: 4rem; color: #00e676;
+  font-weight: 900;
+  text-shadow: 0 0 20px rgba(0, 230, 118, 0.8);
+  margin-bottom: 10px;
+}
+.btn-volver {
+  background: #333; color: white; border: 1px solid white;
+  padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-top: 15px;
+}
+
+/* Error */
+.mensaje-error { color: #ff5252; margin-top: 20px; font-weight: bold; }
+.btn-reintentar {
+  display: block; margin: 15px auto 0;
+  background: rgba(255, 255, 255, 0.1); border: none; color: white;
+  padding: 5px 15px; border-radius: 5px; cursor: pointer;
+}
+
+@keyframes pop-in {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }

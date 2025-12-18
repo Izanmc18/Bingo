@@ -1,0 +1,45 @@
+<div class="barra-acciones">
+  <button 
+    (click)="bingoService.sacarBola()" 
+    [disabled]="bingoService.juegoTerminado() || bingoService.esModoAutomatico()"
+    class="btn-sacar">
+    🎲 Sacar Bola
+  </button>
+
+  <div class="grupo-auto">
+    <button 
+      (click)="bingoService.alternarModoAutomatico()"
+      [disabled]="bingoService.juegoTerminado()"
+      class="btn-auto"
+      [class.activo]="bingoService.esModoAutomatico()">
+      @if (bingoService.esModoAutomatico()) {
+        ⏸ Pausar ({{ bingoService.tiempoSegundos() }}s)
+      } @else {
+        ▶ Auto ({{ bingoService.tiempoSegundos() }}s)
+      }
+    </button>
+    
+    <div class="config-tiempo">
+      <label>Seg.</label>
+      <input 
+        type="text" 
+        inputmode="numeric"
+        maxlength="2"
+        [value]="bingoService.tiempoSegundos()" 
+        (input)="cambiarTiempo($event)"
+        class="input-segundos">
+    </div>
+  </div>
+  
+  <button 
+    (click)="bingoService.abrirModalLinea()" 
+    class="btn-linea">
+    🕵️ Comprobar Línea
+  </button>
+
+  <button 
+    (click)="bingoService.reiniciarPartida()" 
+    class="btn-reiniciar">
+    🔄 Reiniciar
+  </button>
+</div>

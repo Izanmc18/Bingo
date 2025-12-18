@@ -1,0 +1,9 @@
+<div class="contenedor-historial">
+  <h3>Últimos 5 números</h3>
+  <div class="lista-bolas">
+    @for (numero of bingoService.historial().slice(0, 5); track numero) {
+      <div class="bola-pequena">{{ numero }}</div>
+    }
+  </div>
+  <small>Total extraídos: {{ bingoService.historial().length }}</small>
+</div>
